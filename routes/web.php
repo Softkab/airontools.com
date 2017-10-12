@@ -205,3 +205,13 @@ $app->post('/Contacto', function () use ($app) {
     require 'contacto.php';
     
 });
+$app->get('/videos', function ()  {
+	$data=array('nombre' => 'Videos',
+		'Home' => '', 
+		'Productos' => '', 
+		'Servicios' => '',
+		'Quienes' => '',
+		'Contacto' => ''
+	);
+    return view('videos',$data);
+});

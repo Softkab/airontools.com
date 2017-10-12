@@ -70,6 +70,12 @@ app.controller('myCtrl', function($scope, $http) {
                             <!-- **summary - Starts** -->
                             <div class="summary entry-summary">
                               <h1 class="product_title entry-title">{{item.nombre}}</h1>
+                              <?php                               
+                              $urlget="https://admin.torquealto.com/herramientanombre/".$producto;
+                                $json=file_get_contents($urlget);  
+                               $array =(json_decode($json, true));
+                            print_r($array['descripcion']);
+                               ?>
                                 <div class="description">
                                     <div ng-bind-html="item.descripcion"></div>
                                 </div>

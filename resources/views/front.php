@@ -127,7 +127,7 @@
                             <div class="icon">
                                 <i class="fa fa-youtube" aria-hidden="true"></i>
                             </div>
-                            <h4> <a href="https://www.youtube.com/user/Airontoolsmx"  target="_blank"> Videos </a> </h4>
+                            <h4> <a href="/videos"  target="_blank"> Videos </a> </h4>
                             <p>Demostración de Herramientas Neumaticas Industriales y de Torque </p>
                         </div>
                     </div>
