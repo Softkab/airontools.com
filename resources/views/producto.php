@@ -72,12 +72,37 @@ app.controller('myCtrl', function($scope, $http) {
                               <h1 class="product_title entry-title">{{item.nombre}}</h1>
                               <?php                               
                               $urlget="https://admin.torquealto.com/herramientanombre/".$producto;
-                                $json=file_get_contents($urlget);  
-                               $array =(json_decode($json, true));
-                            print_r($array['descripcion']);
+                                //$json=file_get_contents($urlget);  
+                              // $array =(json_decode($json, true));
+                           // print_r($array['descripcion']);
                                ?>
+                               <?php
+
+
+$ch = curl_init();
+
+
+curl_setopt ($ch, CURLOPT_URL, $urlget);
+
+
+curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
+
+
+$contents = curl_exec($ch);
+
+$array =(json_decode($contents, true));
+curl_close($ch);
+
+
+// display file
+
+
+
+
+
+?>
                                 <div class="description">
-                                    <div ng-bind-html="item.descripcion"></div>
+                                   <?php echo($array['descripcion']); ?> 
                                 </div>
                                 <div class="project-details">
                                     <h6>Ventajas y Beneficios</h6>
